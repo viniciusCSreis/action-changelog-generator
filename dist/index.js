@@ -55,14 +55,30 @@ module.exports = require("os");
 
 const core = __webpack_require__(470);
 const fs = __webpack_require__(747);
+const { exec } = __webpack_require__(129);
 
 // most @actions toolkit packages have async methods
 async function run() {
+
+  const repoToken = core.getInput('repo-token');
+  const repoName = core.getInput('repo-name');
+
   try {
     fs.readdir(".", (err, files) => {
       files.forEach(file => {
         console.log(file);
       });
+    });
+    exec(`docker run -it --rm -v .:/usr/local/src/your-app ferrarimarco/github-changelog-generator -p ${repoName} --token ${repoToken} `, (error, stdout, stderr) => {
+      if (error) {
+        console.log(`error: ${error.message}`);
+        return;
+      }
+      if (stderr) {
+        console.log(`stderr: ${stderr}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
     });
   }
   catch (error) {
@@ -72,6 +88,13 @@ async function run() {
 
 run()
 
+
+/***/ }),
+
+/***/ 129:
+/***/ (function(module) {
+
+module.exports = require("child_process");
 
 /***/ }),
 
