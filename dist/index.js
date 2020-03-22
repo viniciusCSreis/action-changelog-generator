@@ -60,7 +60,7 @@ const { exec } = __webpack_require__(129);
 // most @actions toolkit packages have async methods
 async function run() {
 
-  const repoToken = 'b39553443821220bcb259cbdef722cd71651c7c5';
+  const repoToken = core.getInput('repo-token');
   const repoName = 'action-changelog-generator'
   const repoUser = 'viniciusCSreis';
   const currentPath = process.cwd();
