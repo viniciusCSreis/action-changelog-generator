@@ -12,4 +12,8 @@ inputs:
       required: true
 runs:
   using: 'docker'
-  main: 'Dockerfile'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.repo-token }}
+    - ${{ inputs.repo-name }}
+    - ${{ inputs.repo-user }}
