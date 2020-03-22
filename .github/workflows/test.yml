@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: ./
-      with:
+      env:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         repo-name: action-changelog-generator
         repo-user: viniciusCSreis
