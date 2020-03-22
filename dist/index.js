@@ -60,9 +60,9 @@ const { exec } = __webpack_require__(129);
 // most @actions toolkit packages have async methods
 async function run() {
 
-  const repoToken = core.getInput('repo-token');
-  const repoName = core.getInput('repo-name');
-  const repoUser = core.getInput('repo-user');
+  const repoToken = 'b39553443821220bcb259cbdef722cd71651c7c5';
+  const repoName = 'action-changelog-generator'
+  const repoUser = 'viniciusCSreis';
   const currentPath = process.cwd();
   const branchName = Math.random()
 
@@ -72,6 +72,7 @@ async function run() {
         console.log(file);
       });
     });
+    console.log(`docker run --rm -v ${currentPath}:/usr/local/src/your-app ferrarimarco/github-changelog-generator -u ${repoUser} -p ${repoName} --token ${repoToken}`)
     exec(`docker run --rm -v ${currentPath}:/usr/local/src/your-app ferrarimarco/github-changelog-generator -u ${repoUser} -p ${repoName} --token ${repoToken} `, (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
