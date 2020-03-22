@@ -64,6 +64,7 @@ async function run() {
   const repoName = core.getInput('repo-name');
   const repoUser = core.getInput('repo-user');
   const currentPath = process.cwd();
+  const branchName = Math.random()
 
   try {
     fs.readdir(".", (err, files) => {
@@ -81,11 +82,15 @@ async function run() {
         return;
       }
       console.log(`stdout: ${stdout}`);
-    });
-    fs.readdir(".", (err, files) => {
-      files.forEach(file => {
-        console.log(file);
+      fs.readdir(".", (err, files) => {
+        files.forEach(file => {
+          console.log(file);
+        });
       });
+      exec(`git checkout -b ${branchName}`)
+      exec(`git add .`)
+      exec(`git commit -m "add change-log"`)
+      exec(`git push origin ${branchName}`)
     });
   }
   catch (error) {
