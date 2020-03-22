@@ -62,6 +62,7 @@ async function run() {
 
   const repoToken = core.getInput('repo-token');
   const repoName = core.getInput('repo-name');
+  const repoUser = core.getInput('repo-user');
   const currentPath = process.cwd();
 
   try {
@@ -70,7 +71,7 @@ async function run() {
         console.log(file);
       });
     });
-    exec(`docker run --rm -v ${currentPath}:/usr/local/src/your-app ferrarimarco/github-changelog-generator -p ${repoName} --token ${repoToken} `, (error, stdout, stderr) => {
+    exec(`docker run --rm -v ${currentPath}:/usr/local/src/your-app ferrarimarco/github-changelog-generator -u ${repoUser} -p ${repoName} --token ${repoToken} `, (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
         return;
@@ -80,6 +81,11 @@ async function run() {
         return;
       }
       console.log(`stdout: ${stdout}`);
+    });
+    fs.readdir(".", (err, files) => {
+      files.forEach(file => {
+        console.log(file);
+      });
     });
   }
   catch (error) {

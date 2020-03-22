@@ -5,8 +5,11 @@ inputs:
     description: 'repo token to create a pr'
     required: true
   repo-name:
-    description: 'repo name to create a pr'
+    description: 'repo name to create a pr and generate the change log'
     required: true
+  repo-user:
+      description: 'repo user to generate the change log'
+      required: true
 runs:
   using: 'node12'
   main: 'dist/index.js'
