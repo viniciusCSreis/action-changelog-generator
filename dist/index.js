@@ -69,7 +69,7 @@ async function run() {
         console.log(file);
       });
     });
-    exec(`docker run --rm -v .:/usr/local/src/your-app ferrarimarco/github-changelog-generator -p ${repoName} --token ${repoToken} `, (error, stdout, stderr) => {
+    exec(`docker run --rm -v ./:/usr/local/src/your-app ferrarimarco/github-changelog-generator -p ${repoName} --token ${repoToken} `, (error, stdout, stderr) => {
       if (error) {
         console.log(`error: ${error.message}`);
         return;
