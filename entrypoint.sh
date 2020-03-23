@@ -5,4 +5,4 @@ ls
 pwd
 
 git checkout -b change-log
-push.sh
+./push.sh
