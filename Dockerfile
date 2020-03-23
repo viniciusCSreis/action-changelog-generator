@@ -1,6 +1,5 @@
 FROM ferrarimarco/github-changelog-generator
 
-WORKDIR /usr/local/src/your-app
-COPY entrypoint.sh /entrypoint.sh
+COPY entrypoint2.sh /entrypoint2.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["sh","/entrypoint2.sh"]
