@@ -5,4 +5,6 @@ ls
 pwd
 
 git checkout -b change-log
-./push.sh
+git add .
+git commit -m "changes"
+git push origin change-log
