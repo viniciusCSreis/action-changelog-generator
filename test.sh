@@ -3,7 +3,7 @@
 export GITHUB_ACTOR=viniciusCSreis
 export GITHUB_REPOSITORY=viniciusCSreis/action-changelog-generator
 
-docker build -t testelocal -f Dockerfile_Local 
+docker build . -t testelocal -f Dockerfile_Local 
 
 
 echo $GITHUB_ACTOR
