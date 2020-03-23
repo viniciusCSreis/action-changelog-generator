@@ -16,7 +16,7 @@ git remote set-url origin "https://$GITHUB_ACTOR:$1@github.com/$GITHUB_REPOSITOR
 
 git commit -m "changes"
 
-git push origin change_log
+git push -F origin change_log
 
 curl --location --request POST "https://api.github.com/repos/$GITHUB_ACTOR/$GITHUB_REPOSITORY/pulls" \
 --header 'Content-Type: application/json' \
