@@ -22,10 +22,10 @@ COMMAND="curl --location --request POST 'https://api.github.com/repos/$GITHUB_AC
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer $1' \
 --data-raw '{
-  "title": "Change log",
-  "body": "Generate Change Log",
-  "head": "change_log",
-  "base": "master"
+  \"title\": \"Change log\",
+  \"body\": \"Generate Change Log\",
+  \"head\": \"change_log\",
+  \"base\": \"master\"
 }'
 "
 echo "$COMMAND"
