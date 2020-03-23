@@ -6,6 +6,8 @@ pwd
 
 hub --version
 
+echo "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
+
 git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
 
 export GITHUB_USER="$GITHUB_ACTOR"
