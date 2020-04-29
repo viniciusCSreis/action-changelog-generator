@@ -6,5 +6,6 @@ RUN apk add --update \
     curl \
     && rm -rf /var/cache/apk/*
 
+RUN apk add --update bash
 
 ENTRYPOINT ["/bin/bash","/entrypoint.sh"]

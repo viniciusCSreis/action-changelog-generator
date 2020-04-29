@@ -1,19 +1,36 @@
 #!/bin/bash
-# mails="viniciusCSreis/action-changelog-generator"
-# mails2=$(echo $mails | tr "/" "\n")
-# n=0
-# result[0]=""
-# for addr in $mails2
-# do
-#     result[0] = $addr
-# done
-# for addr2 in result
-# do
-#     echo "${addr2}"
-# done=
+
 
 str="viniciusCSreis/action-changelog-generator"
-IFS='/'
-ary=($str)
-echo "${ary[0]}"
-echo "${ary[1]}"
+# for char in $str
+# do
+#     if [ "$char" = "/" ]
+#     then
+#         echo "$char"
+#     else
+#         echo "*"
+#     fi
+# done
+str2=grep -o . <<< $str
+for char in str2
+do
+    echo "$char"
+done
+
+# user=""
+# repo=""
+# for char in $str
+# do
+#     echo "user:$user"
+#     echo "repo:$repo"
+#     if test "${char}" = "/"
+#     then 
+#         repo= char
+#         user+= repo
+#     else 
+#         repo="char"
+#     fi
+# done
+
+# echo "$user"
+# echo "$repo"
