@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 str=$GITHUB_REPOSITORY
 set -f
-IFS=/
+IFS='/'
 arrIN=($str)
 
 github_changelog_generator -u ${arrIN[0]} -p ${arrIN[1]} --token $1 --output CHANGELOG.md --cache-file CHANGELOG-CACHE --cache-log CHANGELOG-CACHE_LOG --issues false --issues-wo-labels false --filter-by-milestone false

@@ -1,3 +1,4 @@
+#!/bin/bash
 # mails="viniciusCSreis/action-changelog-generator"
 # mails2=$(echo $mails | tr "/" "\n")
 # n=0
@@ -12,8 +13,7 @@
 # done=
 
 str="viniciusCSreis/action-changelog-generator"
-set -f
-IFS=/
+IFS='/'
 ary=($str)
 echo "${ary[0]}"
 echo "${ary[1]}"
