@@ -1,8 +1,9 @@
 #!/bin/sh
-github_changelog_generator -u $INPUT_REPO-USER -p $INPUT_REPO-NAME --token $1 --output CHANGELOG.md --cache-file CHANGELOG-CACHE --cache-log CHANGELOG-CACHE_LOG --issues false --issues-wo-labels false --filter-by-milestone false
+github_changelog_generator -u GITHUB_REPOSITORY_OWNER -p $GITHUB_REPOSITORY-NAME --token $1 --output CHANGELOG.md --cache-file CHANGELOG-CACHE --cache-log CHANGELOG-CACHE_LOG --issues false --issues-wo-labels false --filter-by-milestone false
 
 git config user.email "you@example.com"
 git config user.name "GitHub Bot"
+git checkout master
 git checkout -b changelog
 git add CHANGELOG.md
 git remote set-url origin "https://$GITHUB_ACTOR:$1@github.com/$GITHUB_REPOSITORY"

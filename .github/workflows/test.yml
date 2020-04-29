@@ -16,5 +16,3 @@ jobs:
     - uses: ./
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        repo-name: action-changelog-generator
-        repo-user: viniciusCSreis
