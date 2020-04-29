@@ -19,8 +19,8 @@ jobs:
     - uses: viniciusCSreis/action-changelog-generator@master
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        repo-name: your_repo_name
-        repo-user: your_repo_user
+        base-branch: master
+        changelog-branch: changelog
 
 
 ```
