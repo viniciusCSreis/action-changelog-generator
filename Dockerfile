@@ -7,4 +7,4 @@ RUN apk add --update \
     && rm -rf /var/cache/apk/*
 
 
-ENTRYPOINT ["sh","/entrypoint.sh"]
+ENTRYPOINT ["bash","/entrypoint.sh"]
