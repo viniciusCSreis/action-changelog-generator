@@ -16,3 +16,5 @@ jobs:
     - uses: ./
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+        base-branch: master
+        changelog-branch: changelog

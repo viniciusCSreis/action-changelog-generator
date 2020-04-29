@@ -4,8 +4,16 @@ inputs:
   repo-token:
     description: 'repo token to create a pr'
     required: true
+  base-branch:
+    description: 'base branch to create Pull Request'
+    required: true
+  changelog-branch:
+    description: 'new branch to create when generate changelog'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
     - ${{ inputs.repo-token }}
+    - ${{ inputs.base-branch }}
+    - ${{ inputs.changelog-branch }}
